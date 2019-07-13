@@ -218,8 +218,13 @@ video {
 .row {
   display: flex;
 }
+
 .column {
   flex: 25%;
+  padding: 10px;
+}
+.AKcolumn {
+  flex: 20%;
   padding: 10px;
 }
 
