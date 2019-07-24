@@ -223,6 +223,13 @@ video {
   flex: 25%;
   padding: 10px;
 }
+
+.FriendsColumn {
+  flex: 33%;
+  padding: 10px;
+}
+
+
 .AKcolumn {
   flex: 20%;
   padding: 10px;
