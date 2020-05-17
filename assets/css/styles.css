@@ -172,8 +172,8 @@ a.dotted-link:hover {
 
 .header .profile-content .social a {
   background: #b0b7bf;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -185,6 +185,7 @@ a.dotted-link:hover {
   background-clip: padding-box;
   color: #fff;
   text-align: center;
+  padding-top: 6px;
 }
 
 .header .profile-content .social a:hover {
