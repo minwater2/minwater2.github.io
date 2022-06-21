@@ -7,7 +7,7 @@
  * Website: https://themes.3rdwavemedia.com/
 */
 
-#myBtn {
+#TopBtn {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
@@ -15,23 +15,26 @@
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: #10233b; /* Set a background color */
-  color: white; /* Text color */
+  background-color: #1B1E21; /* Set a background color */
+  color: White; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
   border-radius: 10px; /* Rounded corners */
   font-size: 18px; /* Increase font size */
 }
 
-#myBtn:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+#TopBtn:hover {
+  background-color: #707070; /* Add a dark-grey background on hover */
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Lato', arial, sans-serif;
   color: #434343;
-  background: #DAE3E7;
+  background: #434343;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -140,8 +143,8 @@ a.dotted-link:hover {
 /* ======= Header ======= */
 .header {
   padding: 30px 0;
-  background: #f5f5f5;
-  border-top: 10px solid #778492;
+  background: #1B1E21;
+  border-top: 10px solid #1B1E21;
 }
 
 .header .btn {
@@ -155,14 +158,14 @@ a.dotted-link:hover {
 }
 
 .header .profile-content .name {
-  color: #49515a;
+  color: #13A2E2;
   font-size: 38px;
   margin-bottom: 5px;
   margin-top: 30px;
 }
 
 .header .profile-content .desc {
-  color: #778492;
+  color: #B2B2B2;
   font-family: "Lato", arial, sans-serif;
   font-weight: 400;
   font-size: 24px;
@@ -170,8 +173,17 @@ a.dotted-link:hover {
   margin-bottom: 15px;
 }
 
+.header .profile-content .contact {
+  color: #B2B2B2;
+  font-family: "Lato", arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
 .header .profile-content .social a {
-  background: #b0b7bf;
+  background: #484848;
   width: 40px;
   height: 40px;
   display: inline-block;
@@ -183,18 +195,35 @@ a.dotted-link:hover {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  color: #fff;
+  color: #F2F2F2;
   text-align: center;
-  padding-top: 6px;
+  padding-top: 8px;
 }
 
 .header .profile-content .social a:hover {
-  background: #778492;
+  background: #13A2E2;
 }
 
 .header .profile-content .social a .svg-inline--fa {
   font-size: 20px;
   margin-top: 8px;
+}
+
+
+#ProjectsBtn {
+  display: inline-block; 
+  width: 200px;
+  height: 50px;
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #484848; /* Set a background color */
+  color: White; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  font-size: 18px; /* Increase font size */
+}
+
+#ProjectsBtn:hover {
+  background-color: #707070; /* Add a dark-grey background on hover */
 }
 
 /* ======= Sections======= */
@@ -208,14 +237,15 @@ a.dotted-link:hover {
 }
 
 .section .section-inner {
-  background: #fff;
+  background: #1B1E21;
   padding: 30px;
+  color: #B2B2B2;
 }
 
 .section .heading {
   margin-top: 0;
   margin-bottom: 30px;
-  color: #545e69;
+  color: #13A2E2;
   font-size: 24px;
 }
 
@@ -226,8 +256,74 @@ a.dotted-link:hover {
   top: -2px;
 }
 
-/* About Section */
+.section .video iframe {
+  height: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
 
+/* Projects Section */
+.projects-container
+{
+  display: grid;
+  gap: 25px;
+  grid-template-columns: auto auto auto;
+  padding: 5px;
+}
+
+.projects-container .projects-item 
+{
+  padding: 5px;
+}
+
+.projects-container .projects-item .thumbnailImages {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.projects-container .projects-item .project-box {
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+}
+
+.projects-container .projects-item .project-box .text {
+  background-color: #13A2E2;
+  color: #F2F2F2;
+  font-size: 24px;
+  font-style: bold;
+  padding: 16px 32px;
+  text-align: center;
+}
+
+.projects-item:hover .thumbnailImages
+{
+  opacity: 0.3;
+}
+
+.projects-item:hover .project-box 
+{
+  opacity: 1;
+}
+
+.projects .item .title {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.projects .item .title a {
+  color: #778492;
+}
+
+.projects .item .title a:hover {
+  color: #5f6b77;
+}
 
 
 /* Latest Section */
@@ -257,14 +353,6 @@ video {
   flex: 20%;
   padding: 10px;
 }
-
-.armaImgs {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.armaImgs:hover {opacity: 0.7;}
 
 .modal {
   display: none; 
@@ -375,7 +463,7 @@ video {
 
 .latest .featured .summary {
   margin-bottom: 30px;
-  color: #778492;
+  color: #B2B2B2;
 }
 
 .latest .featured img {
@@ -439,26 +527,6 @@ video {
 
 .latest .has-ribbon .ribbon .text:after {
   right: 0;
-}
-
-/* Projects Section */
-.projects .item {
-  margin-bottom: 30px;
-}
-
-.projects .item .title {
-  font-size: 16px;
-  margin-top: 0;
-  margin-bottom: 5px;
-  line-height: 1.5;
-}
-
-.projects .item .title a {
-  color: #778492;
-}
-
-.projects .item .title a:hover {
-  color: #5f6b77;
 }
 
 /* Work Section */
@@ -539,175 +607,6 @@ video {
   margin-bottom: 0;
 }
 
-/* Skills Section */
-.skills .intro {
-  margin-bottom: 30px;
-}
-
-.skills .skillset .item {
-  margin-bottom: 30px;
-}
-
-
-
-.skills .skillset .level-title {
-  font-size: 16px;
-  position: relative;
-  margin-top: 0;
-  margin-bottom: 10;
-  padding-left: 10px;
-}
-
-.skills .skillset .level-title .level-label {
-  color: #ccd1d6;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Lato", arial, sans-serif;
-  position: absolute;
-  left: 15;
-  top: 0;
-}
-
-.level-title:before {
-  content: "";
-  display: inline-block;
-  width: 5px;
-  height: 100%;
-  background: #276582;
-  position: absolute;
-  left: 0;
-  top: 0
-}
-.skills .skillset .level-bar {
-  height: 15px;
-  background: #e8e8e8;
-}
-
-.skills .skillset .level-bar-inner {
-  height: 15px;
-  background: #66cb8c;
-}
-
-.skills .svg-inline--fa {
-  margin-right: 3px;
-  position: relative;
-  top: -1px;
-}
-
-/* Testimonials section */
-.testimonials .item {
-  margin-bottom: 30px;
-}
-
-.testimonials .item:last-child {
-  margin-bottom: 0;
-}
-
-.testimonials .item .quote {
-  color: #666;
-  font-size: 16px;
-  border-left: 5px solid #9fdeb7;
-  padding: 5px 15px;
-  margin-bottom: 15px;
-}
-
-.testimonials .item .quote p {
-  margin-bottom: 0;
-}
-
-.testimonials .item .quote .svg-inline--fa {
-  color: #79d19a;
-  margin-right: 15px;
-}
-
-.testimonials .item .source {
-  font-size: 14px;
-  padding-left: 20px;
-  font-weight: 500;
-}
-
-.testimonials .item .source .name {
-  color: #939ea9;
-  font-weight: 600;
-}
-
-.testimonials .item .source .title {
-  color: #999;
-}
-
-/* Education section */
-.education .item {
-  margin-bottom: 30px;
-}
-
-.education .item:last-child {
-  margin-bottom: 0;
-}
-
-.education .item .title {
-  font-size: 16px;
-  margin-top: 0;
-}
-
-.education .item .university {
-  font-family: "Lato", arial, sans-serif;
-  font-size: 13px;
-  color: #999;
-  font-weight: 600;
-  padding-left: 25px;
-}
-
-.education .item .university .year {
-  color: #b0b7bf;
-  font-weight: 500;
-}
-
-/* Language Section */
-.languages .item {
-  margin-bottom: 15px;
-}
-
-.languages .item .title {
-  color: #778492;
-}
-
-.languages .item .level {
-  color: #999;
-}
-
-.languages .item:last-child {
-  margin-bottom: 0;
-}
-
-.languages .item .svg-inline--fa {
-  color: #79d19a;
-}
-
-/* Blog Section */
-.blog .item {
-  margin-bottom: 30px;
-}
-
-.blog .item .title {
-  font-size: 18px;
-  line-height: 1.3;
-}
-
-.blog .item .title a {
-  color: #778492;
-}
-
-.blog .item .title a:hover {
-  color: #5f6b77;
-}
-
-.blog .item p {
-  margin-bottom: 5px;
-}
-
-.blog .item:last-child {
-  margin-bottom: 0;
-}
 
 /* List section */
 .list ul li {
@@ -724,38 +623,6 @@ video {
 
 .list ul li a:hover {
   color: #49515a;
-}
-
-/* Credits */
-.credits ul li {
-  margin-bottom: 10px;
-}
-
-.credits ul li .svg-inline--fa {
-  margin-right: 5px;
-  position: relative;
-  top: -2px;
-}
-
-.credits ul li a {
-  color: #778492;
-}
-
-.credits ul li a .svg-inline--fa {
-  color: #b0b7bf;
-}
-
-.credits ul li a:hover {
-  color: #49515a;
-}
-
-.credits .btn {
-  margin-bottom: 15px;
-}
-
-.aside .subheading {
-  font-size: 18px;
-  color: #545e69;
 }
 
 /* ======= Footer ======= */
